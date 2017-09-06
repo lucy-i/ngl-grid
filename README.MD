@@ -5,7 +5,8 @@
 To install this library, run:
 
 ```bash
-$ npm install ngl-grid --save
+//still dev in progress
+//$ npm install ngl-grid --save
 ```
 
 ## Consuming your library
@@ -13,6 +14,7 @@ $ npm install ngl-grid --save
 Once you have published your library to npm, you can import your library in any Angular application by running:
 
 ```bash
+//still dev in progress
 $ npm install ngl-grid
 ```
 
@@ -25,7 +27,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from 'ngl-grid';
+import { NGLGridModule } from 'ngl-grid';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { SampleModule } from 'ngl-grid';
   ],
   imports: [
     BrowserModule,
-
+    NGLGridModule.forroot(),
     // Specify your library as an import
     LibraryModule
   ],
@@ -50,7 +52,7 @@ Once your library is imported, you can use its components, directives and pipes 
 <h1>
   {{title}}
 </h1>
-<sampleComponent></sampleComponent>
+<ngl-grid></ngl-grid>
 ```
 
 ## Development
@@ -69,4 +71,4 @@ $ npm run lint
 
 ## License
 
-MIT © [ramkumar.murugarasan@hotmail.com](mailto:ramkumar.murugarasan@hotmail.com)
+MIT © [lucy@ilucy.in](mailto:lucy@ilucy.in)
