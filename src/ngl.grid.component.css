@@ -1,0 +1,36 @@
+  .ngl-grid-header {
+    background-color: lightgrey;
+  }
+  
+  .ngl-grid-row::nthchild(even) {
+    background-color: lightgrey;
+  }
+  
+  .ngl-grid-header, .ngl-grid-row.ngl-grid-footer {
+    flex-direction: row;
+  }
+  
+  .ngl-grid-header, .ngl-grid-column, .ngl-grid-row, .ngl-grid-footer, .ngl-grid-pages, .ngl-grid-paging, .ngl-col-option, .ngl-title {
+    display: flex;
+  }
+  
+  .ngl-grid-column, .ngl-grid-paging {
+    border: 1px solid;
+  }
+  
+  .ngl-grid-column, .ngl-grid-paging, .ngl-title {
+    flex: 1 1 auto;
+  }
+  /*.ngl-grid-pages {
+  max-width: 200px;
+}*/
+  
+  .ngl-grid-footer .ngl-grid-paging {
+    text-align: center;
+    width: 20px;
+    flex: 1 1 auto;
+  }
+  /*
+.ngl-grid-header,.ngl-grid-row {
+  border: 1px solid;
+}*/

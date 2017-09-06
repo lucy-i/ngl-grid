@@ -1,10 +1,15 @@
 <div class="ngl-grid">
   <div class="ngl-grid-header">
-    <div class="ngl-grid-column" *ngFor="let column of gridOptions.columns">{{column.title}}</div>
+    <div class="ngl-grid-column" *ngFor="let column of gridOptions?.columns"><div class="ngl-title">{{column.title}}</div><div class="ngl-col-option">F</div></div>
   </div>
   <div class="ngl-grid-body">
-    <div class="ngl-grid-row" *ngFor="let row of gridOptions.data">
-      <div class="ngl-grid-column"  *ngFor="let column of gridOptions.columns">{{row[column.name]}}</div>
+    <div class="ngl-grid-row" *ngFor="let row of gridOptions?.getPageData">
+      <div class="ngl-grid-column" *ngFor="let column of gridOptions?.columns">{{row[column.name]}}</div>
+    </div>
+  </div>
+  <div class="ngl-grid-footer">
+    <div class="ngl-grid-pages">
+      <div class="ngl-grid-paging" (click)="gridOptions.setCurrentPage(page)" *ngFor="let page of pages">{{page}}</div>
     </div>
   </div>
 </div>
