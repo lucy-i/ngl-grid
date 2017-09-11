@@ -18,10 +18,10 @@ export class NGLOption {
     selectedPage: number = 1;
     columns: NGLColumn[];
     data: any[];
-    public get getPageData(): any[] {
-        return this.data.slice(this.selectedPage - 1, (this.selectedPage + 5 - 1)); // <----
-    }
-    public setCurrentPage(page: number): void {
-        this.selectedPage = page;
-    }
+    // public get getPageData(): any[] {
+    //     return this.data.slice(this.selectedPage - 1, (this.selectedPage + 5 - 1)); // <----
+    // }
+    // public setCurrentPage(page: number): void {
+    //     this.selectedPage = page;
+    // }
 }

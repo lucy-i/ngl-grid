@@ -8,6 +8,8 @@ import { NGLOption, NGLFilterOption } from "./models/ngl-model";
 })
 export class NGLGridComponent implements OnInit {
 
+  pages: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  selectedPage: number = 1;
   @Input("option")
   gridOptions: NGLOption;
   constructor() {
@@ -19,10 +21,14 @@ export class NGLGridComponent implements OnInit {
     });
   }
 
-  public get getData(): any[] {
+  public setCurrentPage(page: number): void {
+    this.selectedPage = page;
+  }
+
+  public get getPageData(): any[] {
     let tempResult: any[] = this.gridOptions.data;
     if (this.gridOptions.columns.filter(t => t.filter != undefined && t.filter.value != undefined && t.filter.value != '').length == 0)
-      return tempResult;
+      return tempResult.slice(this.selectedPage - 1, (this.selectedPage + 5 - 1)); // <---
 
     this.gridOptions.columns.filter(t => t.filter.value != undefined && t.filter.value != '').forEach(element => {
       if (element.filter.filtertype == "equals")
@@ -43,9 +49,9 @@ export class NGLGridComponent implements OnInit {
         );
       if (element.filter.filtertype == "notequals")
         tempResult = tempResult.filter(t =>
-          t[element.name]!=(element.filter.value));
+          t[element.name] != (element.filter.value));
     });
-    return tempResult;
+    return tempResult.slice(this.selectedPage - 1, (this.selectedPage + 5 - 1)); // <----;
   }
 
 }

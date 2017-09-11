@@ -17,8 +17,13 @@
     </div>
   </div>
   <div class="ngl-grid-body">
-    <div class="ngl-grid-row" *ngFor="let row of getData">
+    <div class="ngl-grid-row" *ngFor="let row of getPageData">
       <div class="ngl-grid-column" *ngFor="let column of gridOptions.columns">{{row[column.name]}}</div>
+    </div>
+  </div>
+  <div class="ngl-grid-footer">
+    <div class="ngl-grid-pages">
+      <div class="ngl-grid-paging" (click)="setCurrentPage(page)" *ngFor="let page of pages">{{page}}</div>
     </div>
   </div>
 </div>

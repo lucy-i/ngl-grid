@@ -30,7 +30,26 @@
     display: flex;
 }
 
-.ngl-grid-filter .ngl-filter-value,.ngl-grid-filter .ngl-filter-option {
+.ngl-grid-filter .ngl-filter-value,
+.ngl-grid-filter .ngl-filter-option {
     display: flex;
     flex: 50%;
+}
+
+.ngl-grid-pages{
+    display: flex;
+    flex-direction: row;
+}
+.ngl-grid-paging,
+{
+    flex: 1 1 auto;
+}
+
+.ngl-grid-footer .ngl-grid-paging {
+    text-align: center;
+    width: 20px;
+    flex: 1 1 auto;
+}
+.ngl-grid-pages{
+    max-width: 20%;
 }
