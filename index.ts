@@ -27,10 +27,10 @@ export * from './src/sample.service';
     SamplePipe
   ]
 })
-export class SampleModule {
+export class NGLGridModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: SampleModule,
+      ngModule: NGLGridModule,
       providers: [SampleService]
     };
   }

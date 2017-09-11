@@ -6,7 +6,7 @@ export class NGLColumn {
     filter: NGLFilterOption;
 }
 export class NGLFilterOption {
-    filtertype: number;
+    filtertype: string;
     value: string;
 }
 

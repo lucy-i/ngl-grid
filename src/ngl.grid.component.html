@@ -1,15 +1,24 @@
 <div class="ngl-grid">
   <div class="ngl-grid-header">
-    <div class="ngl-grid-column" *ngFor="let column of gridOptions?.columns"><div class="ngl-title">{{column.title}}</div><div class="ngl-col-option">F</div></div>
-  </div>
-  <div class="ngl-grid-body">
-    <div class="ngl-grid-row" *ngFor="let row of gridOptions?.getPageData">
-      <div class="ngl-grid-column" *ngFor="let column of gridOptions?.columns">{{row[column.name]}}</div>
+    <div class="ngl-grid-column" *ngFor="let column of gridOptions.columns">
+      <div class="ngl-grid-title"> {{column.title}}</div>
+      <div class="ngl-grid-filter">  
+        <select class="ngl-filter-option" [(ngModel)]="column.filter.filtertype"> 
+          <option>Select Option</option>
+          <option value="contains">contains</option>
+          <option value="notcontains">notcontains</option>
+          <option value="equals">equals</option>
+          <option value="notequals">not equals</option>
+          <option value="startswith">startswith</option>
+        </select>
+        <input class="ngl-filter-value" type="text" [(ngModel)]="column.filter.value">
+      </div>
+
     </div>
   </div>
-  <div class="ngl-grid-footer">
-    <div class="ngl-grid-pages">
-      <div class="ngl-grid-paging" (click)="gridOptions.setCurrentPage(page)" *ngFor="let page of pages">{{page}}</div>
+  <div class="ngl-grid-body">
+    <div class="ngl-grid-row" *ngFor="let row of getData">
+      <div class="ngl-grid-column" *ngFor="let column of gridOptions.columns">{{row[column.name]}}</div>
     </div>
   </div>
 </div>
