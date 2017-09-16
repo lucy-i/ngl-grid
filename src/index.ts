@@ -1,22 +1,22 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { NGLGridComponent } from './src/ngl.grid.component';
-import { SampleDirective } from './src/sample.directive';
-import { SamplePipe } from './src/sample.pipe';
-import { NGLGridService } from './src/sample.service';
+import { NGLGridComponent } from './ngl.grid.component';
+import { SampleDirective } from './sample.directive';
+import { SamplePipe } from './sample.pipe';
+import { NGLGridService } from './sample.service';
 
-export * from './src/ngl.grid.component';
-export * from './src/sample.directive';
-export * from './src/sample.pipe';
-export * from './src/sample.service';
+export * from './ngl.grid.component';
+export * from './sample.directive';
+export * from './sample.pipe';
+export * from './sample.service';
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    FormsModule
+    
   ],
   declarations: [
     NGLGridComponent,
