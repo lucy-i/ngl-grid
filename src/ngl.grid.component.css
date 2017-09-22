@@ -3,16 +3,25 @@
 }
 
 .ngl-grid, .ngl-grid-column, .ngl-grid-body {
-    flex: 50%;
+    flex: 49%;
     /* flex: 1 1 auto; */
     flex-direction: column;
 }
 
+.ngl-grid-column {
+    text-align: center;
+    border-right: solid 1px #e94e4e;
+    border-left: solid 1px #e94e4e;
+}
+
 .ngl-grid-header {
     text-align: center;
+    color: #fff;
+    background-color: #fb8383;
 }
 
 .ngl-grid-header, .ngl-grid-row {
+    border: #e94e4e solid 1px;
     justify-content: space-around;
     flex-wrap: wrap;
     /* flex: 1 1 auto; */
@@ -52,45 +61,69 @@
 }
 
 .ngl-grid-filter {
-    width: 400px;
-    height: 20px;
+    /*width: 400px;
+    height: 20px;*/
     flex-flow: row-reverse;
 }
 
 .ngl-grid-option {
-    right: 0px;
+     
+    top: 0px;
+    position: relative;
     background: red;
-    height: 30px;
+    height: 0px;
     transition: width 500ms, height 500ms;
     border-radius: 50%;
-    width: 30px;
+    width: 0px;
+    animation: slide-reverse 500ms linear;
+}
+.ngl-grid-option .ngl-icon-wrapper{
+      width: 0px;
+    right: 22px;
+    /* top: -15px; */
+    position: relative;
+}
+.ngl-grid-option .ngl-icon-wrapper .ngl-icon{
+     /* right: 0px; */
+    top: -15px;
+    position: relative;
+    background: red;
+    height: 20px;
+    transition: width 500ms, height 500ms;
+    border-radius: 50%;
+    display: flex;
+    width: 20px;
     animation: slide-reverse 500ms linear;
 }
 
-.ngl-grid-option .ngl-filter-option,.ngl-grid-option .ngl-filter-value {
+.ngl-grid-option .ngl-filter-option, .ngl-grid-option .ngl-filter-value {
     display: none;
 }
+
 .ngl-grid-filter.is-active .ngl-grid-option {
-    height: 70px;
+    height: 100%;
     width: 100%;
+    top: none;
+    position: initial;
     border-radius: 0%;
     animation: slide 500ms linear;
 }
 
-
-.ngl-grid-filter.is-active .ngl-grid-option .ngl-filter-option,.ngl-grid-filter.is-active .ngl-grid-option .ngl-filter-value {
-    display: block;
-
+.ngl-grid-filter.is-active .ngl-grid-option .ngl-filter-option, .ngl-grid-filter.is-active .ngl-grid-option .ngl-filter-value {
+    display: flex;
+    position: initial;
 }
+
 .ngl-grid-filter .ngl-grid-selected {
-    
+    justify-content: space-around;
     display: flex;
     width: 100%;
 }
+
 .ngl-grid-filter.is-active .ngl-grid-selected {
     display: none;
+    text-align: center;
 }
-
 
 @keyframes slide {
     0% {

@@ -4,6 +4,7 @@
       <div class="ngl-grid-title"> {{column.title}}</div>
       <div class="ngl-grid-filter">
         <div class="ngl-grid-option">
+
           <select class="ngl-filter-option" [(ngModel)]="column.filter.filtertype"> 
           <option>Select Option</option>
           <option value="contains">contains</option>
@@ -13,14 +14,17 @@
           <option value="startswith">startswith</option>
         </select>
           <input class="ngl-filter-value" type="text" [(ngModel)]="column.filter.value">
+          <div class="ngl-icon-wrapper">
+            <div class="ngl-icon"></div>
+          </div>
         </div>
         <div class="ngl-grid-selected">
-          <div class="">
+          <span class="">
             {{column.filter.filtertype}}
-          </div>
-          <div>
-            "{{column.filter.value}}"
-          </div>
+          </span>
+          <span>
+            {{column.filter.value}}
+          </span>
         </div>
       </div>
 
