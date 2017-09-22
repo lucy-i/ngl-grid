@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
 import { NGLOption, NGLFilterOption } from "./models/ngl-model";
 
 @Component({
@@ -6,16 +6,28 @@ import { NGLOption, NGLFilterOption } from "./models/ngl-model";
   templateUrl: './ngl.grid.component.html',
   styleUrls: ['./ngl.grid.component.css']
 })
-export class NGLGridComponent implements OnInit {
+export class NGLGridComponent implements OnInit, AfterViewInit {
+  ngAfterViewInit(): void {
+    var dd = document.getElementsByClassName("ngl-grid-option");
+    for (var index = 0; index < dd.length; index++) {
+      var element = dd[index];
+      element.addEventListener("click", function () {
+        this.parentElement.classList.toggle("is-active");
+      });
+    }
+  }
+
 
   pages: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   selectedPage: number = 1;
   @Input("option")
-  gridOptions: NGLOption;
+  gridOptions: NGLOption = {} as NGLOption;
   constructor() {
   }
 
   ngOnInit(): void {
+
+
     this.gridOptions.columns.forEach(element => {
       element.filter = new NGLFilterOption();
     });
