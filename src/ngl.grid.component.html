@@ -1,7 +1,7 @@
 <div class="ngl-grid">
   <div class="ngl-grid-header">
     <div class="ngl-grid-column" *ngFor="let column of gridOptions.columns">
-      <div class="ngl-grid-title"> {{column.title}}</div>
+      <div class="ngl-grid-title" (click)="sort(column);" > {{column.title}}</div>
       <div class="ngl-grid-filter">
         <div class="ngl-grid-option">
 

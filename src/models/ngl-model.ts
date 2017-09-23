@@ -3,6 +3,7 @@ export class NGLColumn {
     type: string;
     pipe: string;
     title: string;
+    sort: NGLSort = NGLSort.none;
     filter: NGLFilterOption;
 }
 export class NGLFilterOption {
@@ -24,4 +25,9 @@ export class NGLOption {
     // public setCurrentPage(page: number): void {
     //     this.selectedPage = page;
     // }
+}
+export enum NGLSort {
+    none,
+    asc,
+    desc
 }
